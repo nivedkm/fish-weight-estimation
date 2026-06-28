@@ -1,0 +1,46 @@
+[KEY DIFFERENTIATORS TO OUTPERFORM EXISTING LITERATURE]
+- Explainable AI (XAI) Architecture: Two-stage decoupling of Deep Learning (segmentation) from Machine Learning (Gradient Boosting regression) ensures absolute mathematical transparency in mass prediction, completely avoiding the "black-box" flaws of direct-regression CNNs.
+- Scale-Invariant Feature Engineering: Heavy reliance on dimensionless geometric ratios (Aspect Ratio, Elongation, Compactness, Condition Factor) to naturally mitigate underwater optical refraction and camera distance distortion.
+- Unconstrained Multi-Subject Inference: Unlike single-subject isolation papers, this pipeline successfully processes freely swimming, overlapping subjects simultaneously in high-density tank environments.
+- Biological vs Mathematical Edge Preservation: Experimental proof that preserving the raw, jagged biological edge of the fish (via Morphological Opening) produces significantly higher regression accuracy than mathematically smoothing the mask (via Convex Hulls).
+- Zero-Leakage Cross-Validation: Implementation of the Leave-One-Fish-Out (LOFO) protocol, aggressively exposing and eliminating the frame-level data leakage that artificially inflates accuracy in randomized train-test split papers.
+
+[FULL PIPELINE FEATURE BREAKDOWN]
+- Explainable AI (XAI) Architecture: Two-stage decoupling of Deep Learning (segmentation) from Machine Learning (Gradient Boosting regression) ensures absolute mathematical transparency in mass prediction, completely avoiding the "black-box" flaws of direct-regression CNNs.
+- Scale-Invariant Feature Engineering: Heavy reliance on dimensionless geometric ratios (Aspect Ratio, Elongation, Compactness, Condition Factor) to naturally mitigate underwater optical refraction and camera distance distortion.
+- Unconstrained Multi-Subject Inference: Unlike single-subject isolation papers, this pipeline successfully processes freely swimming, overlapping subjects simultaneously in high-density tank environments.
+- Biological vs Mathematical Edge Preservation: Experimental proof that preserving the raw, jagged biological edge of the fish (via Morphological Opening) produces significantly higher regression accuracy than mathematically smoothing the mask (via Convex Hulls).
+- Zero-Leakage Cross-Validation: Implementation of the Leave-One-Fish-Out (LOFO) protocol, aggressively exposing and eliminating the frame-level data leakage that artificially inflates accuracy in randomized train-test split papers.
+- Dual-camera unconstrained temporal synchronization pairing Top and Front views dynamically based on frame timing.
+- Hybrid Computer Vision pipeline combining object detection (YOLO) for localization and segmentation (UNet) for precise boundary tracing.
+- Dual-pass filtering utilizing strict bounding-box segmentation clipping to completely eliminate tank background noise.
+- Advanced Mix Vision Transformer (mit_b0) backbone acting as the UNet encoder for global context understanding.
+- Custom Hybrid Loss optimization during UNet training combining Dice Loss (for structure) and Focal Loss (for hard-to-see pixels).
+- Integration of AdamW optimizer with decoupled weight decay to prevent Vision Transformer overfitting on small datasets.
+- Mathematical ImageNet color distribution normalization using Albumentations to handle underwater color variance.
+- Dynamic pixel-to-centimeter spatial scaling utilizing real-world camera-specific tape calibration constants.
+- Biologically-grounded morphological processing utilizing adaptive elliptical kernels based on bounding box size.
+- Automated morphological opening to aggressively sever fins and tails while preserving the true jagged edge of the core body mass.
+- Mathematical reconstruction of Pseudo-3D fish volume using strictly 2D orthogonal camera dimensions.
+- Algorithmic pairing of Top-View Width and Front-View Height to construct a true volumetric ellipsoid for mass estimation.
+- Automated extraction of primary spatial geometry: Top-View Length (cm), Top-View Width (cm), and Front-View Height (cm).
+- Volumetric profiling: Pseudo-3D Volume (cm³) and approximated Surface Area (cm²).
+- Boundary and Mask analysis: Top-View Area (cm²), Top-View Perimeter (cm), TopMaskPixels, and FrontMaskPixels.
+- Extraction of advanced shape descriptors: Aspect Ratio, Elongation, Compactness, Rectangularity, and Equivalent Diameter (cm).
+- Real-time calculation of established biological metrics: Condition Factor (K).
+- Image Quality Assessment features: Top View Blur index, Front View Blur index, and YOLO Confidence Scores.
+- Gradient Boosting regression engine highly optimized for mapping extracted non-linear geometric formulas to true mass.
+- Implementation of rigid Leave-One-Fish-Out (LOFO) cross-validation to guarantee zero data leakage during model training.
+- Unconstrained multi-fish detection capable of handling dense populations and swimming overlap.
+- Spatial pairing algorithm (Left-to-Right centroid sorting) to accurately map multiple individual fish across different camera angles.
+- End-to-end fully automated production inference engine ready for real-world unconstrained tank deployments.
+- Dynamic on-the-fly model compilation and regression training upon script initialization to ensure up-to-date inference logic.
+- Automated generation of annotated output visualizations overlaying predicted masks, bounding boxes, and camera associations.
+- Detailed console logging providing individual 3D volumetric breakdowns and mass predictions per fish in real-time.
+- Flexible fallback system supporting multiple model architectures (e.g., EfficientNet-B3 if Transformers fail to load).
+- Strict data-quality filtration and algorithmic exclusion of physically impossible bounding boxes (e.g., filtering out frames where Height > Length).
+- Experimental isolation frameworks built-in to validate computer vision theories (e.g., mathematically proving True Edge superiority over Convex Hull).
+- Resolution-agnostic tensor preprocessing (dynamically scales arbitrary underwater camera resolutions to standardized 640x640 inference grids).
+- Automated hardware acceleration detection with seamless fallback from CUDA GPU execution to CPU processing.
+- Memory-safe batch processing and real-time progress tracking via TQDM integration for aggregating massive video datasets.
+- Advanced YOLO confidence thresholding and Non-Maximum Suppression (NMS) handling to filter out phantom detections in densely populated tanks.
