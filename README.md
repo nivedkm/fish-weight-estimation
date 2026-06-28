@@ -56,3 +56,14 @@ python src/3_production_inference/predict_real_world.py --top path/to/top.jpg --
 | **Dual-Camera YOLO + mit_b0 (Ours)** | **Morphological Opening** | **3.54g** | **5.2%** |
 
 *(Metrics validated strictly via cross-track LOFO validation to eliminate data leakage.)*
+### Visual Pipeline
+The extraction process operates in a chronological sequence:
+1. **Raw Acquisition**: High-resolution synchronized captures of the fish.
+2. **YOLOv12m Localization**: Deterministic bounding box inference dynamically crops the fish from the background.
+3. **mit_b0 Segmentation**: Vision Transformer pixel-perfect contouring with morphological opening accurately isolates the biomass for volumetric regression.
+
+#### Top Camera Pipeline
+![Top Camera Pipeline Visualization](docs/pipeline_top_camera.jpg)
+
+#### Front Camera Pipeline
+![Front Camera Pipeline Visualization](docs/pipeline_front_camera.jpg)
