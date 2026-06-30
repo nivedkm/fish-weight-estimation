@@ -4,6 +4,12 @@ This repository contains the complete production pipeline for estimating the phy
 
 The pipeline achieves a state-of-the-art **Mean Absolute Error (MAE) of 3.54g** by completely bypassing the fragility of traditional stereo-vision depth matching in turbid water. It utilizes an **Orthogonal Dual-View (Top/Front) camera setup** paired with a novel **YOLOv12m detection + UNet (mit_b0) segmentation architecture** to extract the true biological dimensions of the fish.
 
+#### Top Camera
+![Top Camera Pipeline Visualization](docs/pipeline_top_camera.jpg)
+
+#### Front Camera 
+![Front Camera Pipeline Visualization](docs/pipeline_front_camera.jpg)
+
 ## Key Features
 
 *   **Orthogonal Dual-View Calibration:** Bypasses error-prone stereoscopic depth mapping. Uses a deterministic Tape Calibration matrix anchored to the focal plane, mathematically converting pixel footprints into exact real-world centimeters (Length, Width, Height) regardless of optical scaling.
@@ -11,7 +17,7 @@ The pipeline achieves a state-of-the-art **Mean Absolute Error (MAE) of 3.54g** 
 *   **Pseudo-3D Volumetric Ellipsoid Modeling:** Unlike 2D bounding-box regression baselines, this pipeline extracts 12 geometric shape descriptors, utilizing Length and Height to construct a mathematical volumetric ellipsoid, allowing the model to accurately differentiate between long-thin fish and short-fat fish.
 *   **Track-Level Median Smoothing (LOFO Evaluated):** Evaluated strictly on Leave-One-Fish-Out (LOFO) cross-validation to prevent data leakage. It is used to address biological deformation by aggregating physical predictions across the temporal track and applying a median filter, eliminating transient anatomical distortions.
 
-## 📂 Repository Structure
+## Repository Structure
 
 The repository is organized into a clean, 3-stage pipeline:
 
@@ -53,8 +59,4 @@ The extraction process operates in a chronological sequence:
 2. **YOLOv12m Localization**: Deterministic bounding box inference dynamically crops the fish from the background.
 3. **mit_b0 Segmentation**: Vision Transformer pixel-perfect contouring with morphological opening accurately isolates and segments the fish for volumetric regression.
 
-#### Top Camera Pipeline
-![Top Camera Pipeline Visualization](docs/pipeline_top_camera.jpg)
 
-#### Front Camera Pipeline
-![Front Camera Pipeline Visualization](docs/pipeline_front_camera.jpg)
