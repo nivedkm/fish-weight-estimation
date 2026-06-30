@@ -1,8 +1,8 @@
 # Fish Weight Estimation using Hybrid YOLO-UNet Segmentation
 
-This repository contains the complete production pipeline for estimating the physical weight of aquatic specimens (specifically fish) in unconstrained, real-world underwater environments. 
+This project is the complete pipeline for estimating the physical weight of aquatic specimens (specifically fish) in unconstrained, real-world underwater environments. 
 
-The pipeline achieves a state-of-the-art **Mean Absolute Error (MAE) of 3.54g** by completely bypassing the fragility of traditional stereo-vision depth matching in turbid water. It utilizes an **Orthogonal Dual-View (Top/Front) camera setup** paired with a novel **YOLOv12m detection + UNet (mit_b0) segmentation architecture** to extract the true biological dimensions of the fish.
+The pipeline achieves a state-of-the-art **Mean Absolute Error (MAE) of 3.54g** by completely bypassing the fragility of traditional stereo-vision based pipelines. It utilizes an **Orthogonal Dual-View (Top/Front) camera setup** paired with **YOLOv12m detection + UNet (mit_b0) segmentation architecture** to extract the true biological dimensions of the fish.
 
 #### Top Camera
 ![Top Camera Pipeline Visualization](docs/pipeline_top_camera.jpg)
