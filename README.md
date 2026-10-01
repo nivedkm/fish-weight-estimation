@@ -46,26 +46,6 @@ Fish-Weight-Pipeline-Pro/
 └── docs/                       # Results
 ```
 
-## 🛠️ Usage
-
-### 1. Computer Vision Feature Extraction
-To run the automated extraction of geometric features from raw synchronized frames:
-```bash
-python src/1_computer_vision/extraction_pipeline.py
-```
-
-### 2. Regression Training & Evaluation
-To train the Gradient Boosting Regressor and validate using Leave-One-Fish-Out (LOFO):
-```bash
-python src/2_regression_modeling/evaluate_lofo_pipeline.py
-```
-
-### 3. Production Inference
-To estimate the weight of a fish using a Top and Front frame from a production environment:
-```bash
-python src/3_production_inference/predict_real_world.py --top path/to/top.jpg --front path/to/front.jpg
-```
-
 *(Metrics validated strictly via cross-track LOFO validation to eliminate data leakage.)*
 ### Visual Pipeline
 The extraction process operates in a chronological sequence:
