@@ -5,7 +5,7 @@ This project is the complete pipeline for estimating the physical weight of aqua
 The pipeline achieves a state-of-the-art **Mean Absolute Error (MAE) of 3.54g** by completely bypassing the fragility of traditional stereo-vision based pipelines. It utilizes an **Orthogonal Dual-View (Top/Front) camera setup** paired with **YOLOv12m detection + UNet (mit_b0) segmentation architecture** to extract the true biological dimensions of the fish.
 
 #### Pipeline Diagram
-![Pipeline ](docs/pipeline_branched_diagram.png)
+<img src="docs/pipeline_branched_diagram.png" width="600">
 
 #### Top Camera
 ![Top Camera Pipeline Visualization](docs/pipeline_top_camera.jpg)
