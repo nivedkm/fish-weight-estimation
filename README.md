@@ -20,6 +20,17 @@ The pipeline achieves a state-of-the-art **Mean Absolute Error (MAE) of 3.54g** 
 *   **Pseudo-3D Volumetric Ellipsoid Modeling:** Unlike 2D bounding-box regression baselines, this pipeline extracts 12 geometric shape descriptors, utilizing Length and Height to construct a mathematical volumetric ellipsoid, allowing the model to accurately differentiate between long-thin fish and short-fat fish.
 *   **Track-Level Median Smoothing (LOFO Evaluated):** Evaluated strictly on Leave-One-Fish-Out (LOFO) cross-validation to prevent data leakage. It is used to address biological deformation by aggregating physical predictions across the temporal track and applying a median filter, eliminating transient anatomical distortions.
 
+## Dataset Details
+Number of fishes: 16
+Weight Range: 9.61g to 81.90g
+Total Images: 13,780
+
+## Dataset creation process
+* Placed the fish individually in the aquarium after recording their actual weight.
+* Captured synchronized **top and front views** using underwater cameras under controlled lighting conditions.
+* Converted the recorded videos into frames and organized the data separately for each fish.
+
+
 ## Repository Structure
 
 The repository is organized into a clean, 3-stage pipeline:
